@@ -1,0 +1,43 @@
+p{
+    text-align: center;
+}
+
+.texto{
+    text-align: center;
+}
+
+.banner{
+    justify-items: center;
+    align-items: center;
+}
+
+
+.columna{
+    box-shadow: 10px 5px 5px 0 gray;
+}   
+
+.cbody{
+    padding: 20px;
+    border: 1px solid rgb(179, 178, 178);
+    box-shadow: 5px 3px gray;
+}
+.homecbody{
+    height: 500px;
+}
+
+.btnRegist{
+    margin-left: 35%;
+}
+
+.formulario{
+    margin-left: 20%;
+}
+
+.idFilter{
+    display: inline;
+    width: 400px;
+}
+
+.btnCant{
+    width: 150px;
+}
