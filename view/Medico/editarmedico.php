@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Editar Paciente</title>
+        <title>Editar Medico</title>
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -44,9 +44,9 @@ header('Location: ../../view/inicio/login.php');
 ?>
                 </div>
                 <div class="card-body">
-                <h4 class="card-title texto">Editar Paciente de ID: <?php echo $_REQUEST['nombre']?></h4>
+                <h4 class="card-title texto">Editar Medico de ID: <?php echo $_REQUEST['nombre']?></h4>
                     <div class="col-md-9 formulario">
-                        <form action="../../controller/pacienteController.php" method="get">
+                        <form action="../../controller/MedicoController.php" method="get">
                             <div class="row">
                             <div class="mb-3">
                                         <label for="txtId" class="form-label">ID</label>
@@ -54,30 +54,27 @@ header('Location: ../../view/inicio/login.php');
                                     </div>
                                 <div class="col-sm-5">
                                     <div class="mb-3">
-                                        <label for="txtNombreexamen" class="form-label">Nombre del Paciente</label>
-                                        <input type="text" class="form-control" name="Nombrepaciente" id="txtNombrepaciente"  value="<?php echo $_REQUEST['nombre']?> "required>
+                                        <label for="txtNombreexamen" class="form-label">Nombre del Medico</label>
+                                        <input type="text" class="form-control" name="Nombremedico" id="txtNombremedico"  value="<?php echo $_REQUEST['nombre']?> "required>
                                     </div>
-                                    <div class="mb-3">
-                                        <label for="txtTipoexamen" class="form-label">Edad</label>
-                                        <input type="text" class="form-control" maxlength="3" name="edad" id="txtEdad" pattern="[0-9]+" value="<?php echo $_REQUEST['edad']?>"required>
-                                    </div>
+
                                     <div class="mb-3">
                                         <label for="txtTipomuestra" class="form-label">Telefono</label>
-                                        <input type="text" class="form-control" maxlength="8" name="telefono" id="txttelefono" pattern="[0-9]+" value="<?php echo $_REQUEST['telefono']?>" placeholder="Ingrese el telefono del paciente" required>
+                                        <input type="text" class="form-control" maxlength="8" name="telefono" id="txttelefono" pattern="[0-9]+" value="<?php echo $_REQUEST['telefono']?>" placeholder="Ingrese el telefono del medico" required>
                                     </div>
                                 </div>
                                 <div class="col-sm-5">
                                     <div class="mb-3">
-                                        <label for="txtCodigo" class="form-label">Persona de contacto</label>
-                                        <input type="text" class="form-control" name="contacto" id="txtContacto" value="<?php echo $_REQUEST['contacto']?>" placeholder="Ingrese una persona de contacto" required>
+                                        <label for="txtCodigo" class="form-label">Correo electronico</label>
+                                        <input type="text" class="form-control" name="contacto" id="txtContacto" value="<?php echo $_REQUEST['contacto']?>" placeholder="Ingrese el correo electronico" required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="txtdirecion" class="form-label">Direccion</label>
-                                        <input type="text" class="form-control" name="direccio" id="txtDireccion" value="<?php echo $_REQUEST['direccion']?>" placeholder="Ingrese la direccion del paciente" required>
+                                        <input type="text" class="form-control" name="direccio" id="txtDireccion" value="<?php echo $_REQUEST['direccion']?>" placeholder="Ingrese la direccion del medico" required>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="txtdui" class="form-label">Dui</label>
-                                        <input type="text" class="form-control" maxlength="12" name="dui" id="txtDui"  pattern="[0-9]+" value="<?php echo $_REQUEST['dui']?>" placeholder="Ingrese la dui del paciente" required>
+                                        <label for="txtdui" class="form-label">Especialidad</label>
+                                        <input type="text" class="form-control" maxlength="12" name="espe" id="txtEspe"   value="<?php echo $_REQUEST['espe']?>" placeholder="Ingrese la Especialidad" required>
                                     </div>
 
                                 </div>

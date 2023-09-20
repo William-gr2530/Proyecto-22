@@ -31,6 +31,14 @@
                 </ul>
               </li>
               <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Medico</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="../Medico/nuevomedico.php">Nuevo Medico</a></li>
+                  <li><a class="dropdown-item" href="../Medico/mostrarmedico.php?buscar=&Tipo=">Mostrar Medico</a></li>
+                  
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Analisis</a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="../Realizar/mostraranalisis.php?buscar=&Tipo=">Ver Analisis</a></li>
