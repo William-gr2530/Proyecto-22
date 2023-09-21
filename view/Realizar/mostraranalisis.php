@@ -68,6 +68,7 @@ header('Location: ../../view/inicio/login.php');
                               <th>Id</th>
                               <th>Examen</th>
                               <th>Paciente</th>
+                              <th>Medico</th>
                               <th>Deuda</th>
                               <th>Resultado</th>
                               <th>Acciones</th>
@@ -97,6 +98,7 @@ header('Location: ../../view/inicio/login.php');
                                 echo '<td scope="row">'.$usuario['id'].'</td>';
                                 echo '<td scope="row">'.$usuario['examen'].'</td>';
                                 echo '<td scope="row">'.$usuario['paciente'].'</td>';
+                                echo '<td scope="row">'.$usuario['medico'].'</td>';
                                 echo '<td scope="row">'.$usuario['deuda'].'</td>';
                                 echo '<td scope="row">'.$usuario['resultado'].'</td>';
 

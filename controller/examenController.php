@@ -13,10 +13,11 @@ class examenController
        
         $Idexamen=$_REQUEST['idexamen'];
         $Idpaciente=$_REQUEST['idpaciente'];
+        $Idmedico=$_REQUEST['idmedico'];
         $Pago=$_REQUEST['pago'];
         $Resultado="En proceso";
        
-        $insert=$this->ObjrealizarModel->insertarPrueva($Idexamen,$Idpaciente,$Pago,$Resultado);
+        $insert=$this->ObjrealizarModel->insertarPrueva($Idexamen,$Idpaciente,$Idmedico,$Pago,$Resultado);
         if ($insert!=null)
         {
            

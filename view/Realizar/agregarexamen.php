@@ -51,13 +51,16 @@ header('Location: ../../view/inicio/login.php');
                                 <div class="col-sm-5">
                                     <div class="mb-3">
                                         <label for="txtIdexamen" class="form-label">ID Examen</label>
-                                        <input type="text" class="form-control" name="idexamen" id="txtIdexamen" value="<?php echo $_REQUEST['idexamen']?> "required>
+                                        <input type="text" class="form-control" name="idexamen" id="txtIdexamen" value="<?php echo $_REQUEST['idexamen']?> "readonly>
                                     </div>
                                     <div class="mb-3">
                                         <label for="txtTipoexamen" class="form-label">ID Cliente</label>
-                                        <input type="text" class="form-control" name="idpaciente" id="txtIdcliente" value="<?php echo $_REQUEST['idpaciente']?> " required>
+                                        <input type="text" class="form-control" name="idpaciente" id="txtIdcliente" value="<?php echo $_REQUEST['idpaciente']?> " readonly>
                                     </div>
-
+                                    <div class="mb-3">
+                                        <label for="txtTipoexamen" class="form-label">ID Medico</label>
+                                        <input type="text" class="form-control" name="idmedico" id="txtIdcliente" value="<?php echo $_REQUEST['idmedico']?> " readonly>
+                                    </div>
                                 </div>
                                 <div class="col-sm-5">
                                     <div class="mb-3">

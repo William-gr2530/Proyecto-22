@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Examenes</title>
+    <title>Medicos</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -44,7 +44,7 @@ header('Location: ../../view/inicio/login.php');
                 </div>
                 <div class="card-body">
                     
-                    <h4 class="card-title texto">Examenes para paciente <?php echo $_REQUEST['paciente']?></h4>
+                    <h4 class="card-title texto">Medico encargado del paciente: <?php echo $_REQUEST['paciente']?></h4>
                     <div class="col-md-9">
                       <div class="mx-5">
                         <div class="row">
@@ -63,10 +63,10 @@ header('Location: ../../view/inicio/login.php');
                             <tr>
                               <th>Id</th>
                               <th>Nombre</th>
-                              <th>Codigo</th>
-                              <th>Tipo</th>
-                              <th>Precio</th>
-                              <th>Muestra</th>
+                              <th>Telefono</th>
+                              <th>Contacto</th>
+                              <th>Direccion</th>
+                              <th>Especialidad</th>
                               <th>Acciones</th>
                             </tr>
                         </thead>
@@ -74,20 +74,21 @@ header('Location: ../../view/inicio/login.php');
                           <?php
 
                           $idpaciente=$_REQUEST['idpaciente'];
-                          $paciente=$_REQUEST['paciente'];
-                            include("../../model/examenModel.php");
-                            $medic = new examenModel();
-                            $Lista = $medic->Verexamen();
+                          $idexamen=$_REQUEST['idexamen'];
+                          $precio=$_REQUEST['precio'];
+                            include("../../model/medicoModel.php");
+                            $medic = new medicoModel();
+                            $Lista = $medic->VerMedico();
                             
                             foreach($Lista as $med){
                               echo '<tr>';
                               echo '<td>'.$med['id'].'</td>';
                               echo '<td>'.$med['nombre'].'</td>';
-                              echo '<td>'.$med['codigo'].'</td>';
-                              echo '<td>'.$med['tipoexamen'].'</td>';
-                              echo '<td>'.$med['precio'].'</td>';
-                              echo '<td>'.$med['tipomuestra'].'</td>';
-                              echo '<td><a href="agregarmedico.php?paciente='.$paciente.'&idpaciente='.$idpaciente.'&idexamen='.$med['id'].'&precio='.$med['precio'].'">Agregar</a> </td>';
+                              echo '<td>'.$med['telefono'].'</td>';
+                              echo '<td>'.$med['contacto'].'</td>';
+                              echo '<td>'.$med['direccion'].'</td>';
+                              echo '<td>'.$med['espe'].'</td>';
+                              echo '<td><a href="agregarexamen.php?idpaciente='.$idpaciente.'&idexamen='.$idexamen.'&precio='.$precio.'&idmedico='.$med['id'].'">Agregar</a> </td>';
                               
                               echo '</td>';
                             }
