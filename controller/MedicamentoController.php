@@ -12,12 +12,11 @@ class MedicamentoController
     {
        
         $Nombre=$_REQUEST['Nombreexamen'];
-        $Codigo=$_REQUEST['Codigo'];
         $Tipoexamen=$_REQUEST['Tipoexamen'];
         $Precio=$_REQUEST['Precio'];
         $Tipomuestra=$_REQUEST['Tipomuestra'];
         
-        $insert=$this->ObjexamenModel->insertarExamen($Nombre,$Codigo,$Tipoexamen,$Precio,$Tipomuestra);
+        $insert=$this->ObjexamenModel->insertarExamen($Nombre,$Tipoexamen,$Precio,$Tipomuestra);
         if ($insert!=null)
         {
             header("Location: ../view/Examenes/nuevoexamen.php?mensaje=Examen  '.$Nombreexamen.' creado con exito!");
@@ -34,7 +33,6 @@ class MedicamentoController
        
         $Id=$_REQUEST['id'];
         $Nombre=$_REQUEST['Nombreexamen'];
-        $Codigo=$_REQUEST['Codigo'];
         $Tipoexamen=$_REQUEST['Tipoexamen'];
         $Precio=$_REQUEST['Precio'];
         $Tipomuestra=$_REQUEST['Tipomuestra'];
@@ -45,7 +43,7 @@ class MedicamentoController
             if ($Verificacion!=null)
             {
                
-                $Update=$this->ObjexamenModel->ActualizarExamen($Id,$Nombre,$Codigo,$Tipoexamen,$Precio,$Tipomuestra);
+                $Update=$this->ObjexamenModel->ActualizarExamen($Id,$Nombre,$Tipoexamen,$Precio,$Tipomuestra);
                 if ($Update==1)
                 {
                     

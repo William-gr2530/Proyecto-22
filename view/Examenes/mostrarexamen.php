@@ -63,7 +63,7 @@ header('Location: ../../view/inicio/login.php');
                             <tr>
                               <th>Id</th>
                               <th>Nombre</th>
-                              <th>Codigo</th>
+                              
                               <th>Tipo</th>
                               <th>Precio</th>
                               <th>Muestra</th>
@@ -92,12 +92,12 @@ header('Location: ../../view/inicio/login.php');
                               echo '<tr>';
                               echo '<td>'.$med['id'].'</td>';
                               echo '<td>'.$med['nombre'].'</td>';
-                              echo '<td>'.$med['codigo'].'</td>';
+                              
                               echo '<td>'.$med['tipoexamen'].'</td>';
                               echo '<td>'.$med['precio'].'</td>';
                               echo '<td>'.$med['tipomuestra'].'</td>';
                              
-                              echo '<td><a href="editarexamenes.php?id='.$med['id'].'&nombre='.$med['nombre'].'&codigo='.$med['codigo'].'&tipoexamen='.$med['tipoexamen'].'&precio='.$med['precio'].'&tipomuestra='.$med['tipomuestra'].'">Editar</a> | <a href="../../controller/MedicamentoController.php?Tipo=Eliminar&id='.$med['id'].'">eliminar</a></td>';
+                              echo '<td><a href="editarexamenes.php?id='.$med['id'].'&nombre='.$med['nombre'].'&tipoexamen='.$med['tipoexamen'].'&precio='.$med['precio'].'&tipomuestra='.$med['tipomuestra'].'">Editar</a> | <a href="../../controller/MedicamentoController.php?Tipo=Eliminar&id='.$med['id'].'">eliminar</a></td>';
                               echo '</td>';
                             }
                           ?>

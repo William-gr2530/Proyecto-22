@@ -48,11 +48,11 @@ header('Location: ../../view/inicio/login.php');
                     <div class="col-md-9">
                       <div class="mx-5">
                         <div class="row">
-                          <div class="col-sm-5">
-                            <input type="text" class="form-control d-flex" name="buscarMedic" id="txtBuscarMedic" aria-describedby="helpId" placeholder="Búsqueda de Examenes">
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control d-flex" name="buscar" id="txtBuscarMedic" aria-describedby="helpId" placeholder="Búsqueda por nombre">
                           </div>
                           <div class="col-sm-3">
-                            <button type="submit" class="btn btn-primary" id="btnBuscarMedicamento">Buscar</button>
+                            <button type="submit" class="btn btn-primary" id="btnBuscarMedicamento" name="Tipo" value="Buscar">Buscar</button>
                           </div>
                         </div>
                         
@@ -63,7 +63,7 @@ header('Location: ../../view/inicio/login.php');
                             <tr>
                               <th>Id</th>
                               <th>Nombre</th>
-                              <th>Codigo</th>
+                              
                               <th>Tipo</th>
                               <th>Precio</th>
                               <th>Muestra</th>
@@ -78,16 +78,27 @@ header('Location: ../../view/inicio/login.php');
                             include("../../model/examenModel.php");
                             $medic = new examenModel();
                             $Lista = $medic->Verexamen();
-                            
+
+                            $buscar="";
+                            $buscar=$_REQUEST['buscar'];
+                          if ($buscar!=""){ 
+
+                            $Lista = $medic->Buscarexamen($buscar);
+
+                          }else{ 
+
+                            $Lista = $medic->Verexamen();
+
+                          }
                             foreach($Lista as $med){
                               echo '<tr>';
                               echo '<td>'.$med['id'].'</td>';
                               echo '<td>'.$med['nombre'].'</td>';
-                              echo '<td>'.$med['codigo'].'</td>';
+                             
                               echo '<td>'.$med['tipoexamen'].'</td>';
                               echo '<td>'.$med['precio'].'</td>';
                               echo '<td>'.$med['tipomuestra'].'</td>';
-                              echo '<td><a href="agregarmedico.php?paciente='.$paciente.'&idpaciente='.$idpaciente.'&idexamen='.$med['id'].'&precio='.$med['precio'].'">Agregar</a> </td>';
+                              echo '<td><a href="agregarmedico.php?paciente='.$paciente.'&idpaciente='.$idpaciente.'&idexamen='.$med['id'].'&precio='.$med['precio'].'&buscar=&Tipo=">Agregar</a> </td>';
                               
                               echo '</td>';
                             }

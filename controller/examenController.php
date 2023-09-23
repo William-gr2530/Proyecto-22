@@ -14,10 +14,11 @@ class examenController
         $Idexamen=$_REQUEST['idexamen'];
         $Idpaciente=$_REQUEST['idpaciente'];
         $Idmedico=$_REQUEST['idmedico'];
-        $Pago=$_REQUEST['pago'];
+        $Fecha=$_REQUEST['fecha'];
+        $Des=$_REQUEST['des'];
         $Resultado="En proceso";
        
-        $insert=$this->ObjrealizarModel->insertarPrueva($Idexamen,$Idpaciente,$Idmedico,$Pago,$Resultado);
+        $insert=$this->ObjrealizarModel->insertarPrueva($Idexamen,$Idpaciente,$Idmedico,$Fecha,$Des,$Resultado);
         if ($insert!=null)
         {
            
@@ -107,8 +108,8 @@ switch ($_REQUEST['Tipo'])
     case "Eliminar":
         $ObjexamenController->Eliminar($_REQUEST['id']);
         break;
-    case "Cargar":
-        
+    case "Buscar":
+        $ObjexamenController->Buscarexamen();
         break;
         
     case "Actualizar":

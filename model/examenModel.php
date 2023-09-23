@@ -12,7 +12,7 @@ class examenModel extends Conexion
         private $Tipomuestra;
         
         private $Fecha;
-        private $Codigo;
+        
         private $id;
 
         public function __construct()
@@ -21,11 +21,11 @@ class examenModel extends Conexion
             $this->conexion=$this->conexion->getConexion();
         }
 
-        public function insertarExamen(string $nombreexamen, string $codigo,string $tipoexamen,string $precio,string $tipomuestra)
+        public function insertarExamen(string $nombreexamen,string $tipoexamen,string $precio,string $tipomuestra)
         {
            
             $this->Nombreexamen=$nombreexamen;
-            $this->Codigo=$codigo;
+            
             $this->Tipoexamen=$tipoexamen;
             $this->Precio=$precio;
             $this->Tipomuestra=$tipomuestra;
@@ -33,27 +33,27 @@ class examenModel extends Conexion
             
             
 
-            $sql="INSERT INTO examen(nombre,codigo,tipoexamen,Precio,tipomuestra) VALUES(?,?,?,?,?);";
+            $sql="INSERT INTO examen(nombre,tipoexamen,Precio,tipomuestra) VALUES(?,?,?,?);";
             $insert=$this->conexion->prepare($sql);
-            $arregloParametros=array($this->Nombreexamen,$this->Codigo,$this->Tipoexamen,$this->Precio,$this->Tipomuestra);
+            $arregloParametros=array($this->Nombreexamen,$this->Tipoexamen,$this->Precio,$this->Tipomuestra);
             $ResultadoInsert=$insert->execute($arregloParametros);
             $idInsert=$this->conexion->lastInsertID();
             return $idInsert;
         }
 
-        public function ActualizarExamen(string $id,string $nombreexamen, string $codigo,string $tipoexamen,string $precio,string $tipomuestra)
+        public function ActualizarExamen(string $id,string $nombreexamen,string $tipoexamen,string $precio,string $tipomuestra)
         {
            
             $this->Id=$id;
             $this->Nombreexamen=$nombreexamen;
-            $this->Codigo=$codigo;
+            
             $this->Tipoexamen=$tipoexamen;
             $this->Precio=$precio;
             $this->Tipomuestra=$tipomuestra;
 
-            $sql="UPDATE examen SET nombre=?, codigo=?, tipoexamen=?, precio=?, tipomuestra=? WHERE id='$id'"; 
+            $sql="UPDATE examen SET nombre=?, tipoexamen=?, precio=?, tipomuestra=? WHERE id='$id'"; 
             $update=$this->conexion->prepare($sql);
-            $ArregloParametros=array($this->Nombreexamen,$this->Codigo,$this->Tipoexamen,$this->Precio,$this->Tipomuestra);
+            $ArregloParametros=array($this->Nombreexamen,$this->Tipoexamen,$this->Precio,$this->Tipomuestra);
             $update->execute($ArregloParametros);
             $resultadoUpdate = $update->rowCount();
             return $resultadoUpdate;

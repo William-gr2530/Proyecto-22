@@ -77,7 +77,7 @@ header('Location: ../../view/inicio/login.php');
                                     </div>
                                     <div class="mb-3">
                                         <label for="txtdui" class="form-label">Dui</label>
-                                        <input type="text" class="form-control" maxlength="12" name="dui" id="txtDui"  pattern="[0-9]+" value="<?php echo $_REQUEST['dui']?>" placeholder="Ingrese la dui del paciente" required>
+                                        <input type="text" class="form-control" maxlength="9" name="dui" id="txtDui"  pattern="[0-9]+" value="<?php echo $_REQUEST['dui']?>" placeholder="Ingrese la dui del paciente" required>
                                     </div>
 
                                 </div>

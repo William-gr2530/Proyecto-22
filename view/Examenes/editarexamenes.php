@@ -81,10 +81,7 @@ header('Location: ../../view/inicio/login.php');
                                             <option value="Orina">Orina</option>
                                         </select>
                                     </div>
-                                    <div class="mb-3">
-                                        <label for="txtCodigo" class="form-label">Codigo de examen</label>
-                                        <input type="text" maxlength="8" pattern="[0-9]+" class="form-control" name="Codigo" id="txtCodigo" value="<?php echo $_REQUEST['codigo']?>" placeholder="Asigne un codigo" required>
-                                    </div>
+
                                     <div class="mb-3">
                                         <label for="txtPrecio" class="form-label">Precio</label>
                                         <input type="text" maxlength="4" pattern="[0-9 .]+" class="form-control" name="Precio" id="txtPrecio" value="<?php echo $_REQUEST['precio']?>" placeholder="Ingrese el precio" required>

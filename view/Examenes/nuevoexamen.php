@@ -64,27 +64,27 @@ header('Location: ../../view/inicio/login.php');
                                             <option value="Material genetico">Material genetico</option>                                      
                                         </select>
                                     </div>
-                                    <div class="mb-3">
-                                        <label for="txtTipomuestra" class="form-label">Tipo de muestra</label>
-                                        <select class="form-select" name="Tipomuestra" id="txtTipomuestra" required>
-                                            <option></option>
-                                            <option value="Sangre completa">Sangre completa</option>
-                                            <option value="Saliba">Saliba</option>
-                                            <option value="Heces">Heces</option>
-                                            <option value="Orina">Orina</option>
-                                        </select>
-                                    </div>
+                                
+                                
                                 </div>
                                 <div class="col-sm-5">
-                                    <div class="mb-3">
-                                        <label for="txtCodigo" class="form-label">Codigo de examen</label>
-                                        <input type="text" pattern="[0-9]+" maxlength="8" class="form-control" name="Codigo" id="txtCodigo"  placeholder="Asigne un codigo" required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="txtPrecio"  class="form-label">Precio</label>
-                                        <input type="text" pattern="[0-9 .]+" maxlength="4" class="form-control" name="Precio" id="txtPrecio"  placeholder="Ingrese el precio" required>
-                                    </div>
+                                
+                                <div class="mb-3">
+                                    <label for="txtTipomuestra" class="form-label">Tipo de muestra</label>
+                                    <select class="form-select" name="Tipomuestra" id="txtTipomuestra" required>
+                                        <option></option>
+                                        <option value="Sangre completa">Sangre completa</option>
+                                        <option value="Saliba">Saliba</option>
+                                        <option value="Heces">Heces</option>
+                                        <option value="Orina">Orina</option>
+                                    </select>
+                                </div>
 
+                                <div class="mb-3">
+                                    <label for="txtPrecio"  class="form-label">Precio</label>
+                                    <input type="text" pattern="[0-9 .]+" maxlength="4" class="form-control" name="Precio" id="txtPrecio"  placeholder="Ingrese el precio" required>
+                                </div>
+                            </div>
 
                                 </div>
                             </div>

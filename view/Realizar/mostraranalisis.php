@@ -48,7 +48,7 @@ header('Location: ../../view/inicio/login.php');
                     <h4 class="card-title texto">Analisis</h4>
                     <div class="col-md-9">
                       <div class="mx-5">
-                        <div class="row">
+                        
                         <form action="../../view/Realizar/mostraranalisis.php" method="get">
                         <div class="row">
                           <div class="col-sm-5">
@@ -62,14 +62,15 @@ header('Location: ../../view/inicio/login.php');
                         
                       </div>      
                     </div>
-                    <table class="table table-hover my-5">
-                          <thead class="table-primary text-center">
+                    <table class="table table-hover my-5" id="tblBuscar">
+                          <thead class="table-primary">
                             <tr>
                               <th>Id</th>
                               <th>Examen</th>
                               <th>Paciente</th>
                               <th>Medico</th>
-                              <th>Deuda</th>
+                              <th>Fecha</th>
+                              <th>Descuento</th>
                               <th>Resultado</th>
                               <th>Acciones</th>
                             </tr>
@@ -99,13 +100,13 @@ header('Location: ../../view/inicio/login.php');
                                 echo '<td scope="row">'.$usuario['examen'].'</td>';
                                 echo '<td scope="row">'.$usuario['paciente'].'</td>';
                                 echo '<td scope="row">'.$usuario['medico'].'</td>';
-                                echo '<td scope="row">'.$usuario['deuda'].'</td>';
+                                echo '<td scope="row">'.$usuario['Fecha'].'</td>';
+                                echo '<td scope="row">'.$usuario['Descuento'].'%</td>';
                                 echo '<td scope="row">'.$usuario['resultado'].'</td>';
 
                                 echo '<td> <a href="../../controller/examenController.php?Tipo=Eliminar&id='.$usuario['id'].'" name="btnEliminar" rol="buton" >eliminar</a> |
-                                 <a href="../../view/Realizar/resultadosanalisis.php?id='.$usuario['id'].'&nombre='.$usuario['paciente'].'&resultado='.$usuario['resultado'].'" name="btnEliminar" rol="buton" >Ingresar Resultados</a> 
-                                 </td>';
-                                echo '</tr>';
+                                 <a href="../../view/Realizar/resultadosanalisis.php?id='.$usuario['id'].'&nombre='.$usuario['paciente'].'&resultado='.$usuario['resultado'].'" name="btnEliminar" rol="buton" >Ingresar Resultados</a> </td>';
+                                echo '</td>';
                               }
                             ?>
                           </tbody>

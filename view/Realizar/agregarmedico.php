@@ -79,7 +79,20 @@ header('Location: ../../view/inicio/login.php');
                             include("../../model/medicoModel.php");
                             $medic = new medicoModel();
                             $Lista = $medic->VerMedico();
+
                             
+                            $buscar="";
+
+                            $buscar=$_REQUEST['buscar'];
+                          if ($buscar!=""){ 
+
+                            $Lista = $medic->Buscarmedico($buscar);
+
+                          }else{ 
+
+                            $Lista = $medic->VerMedico();
+
+                          }
                             foreach($Lista as $med){
                               echo '<tr>';
                               echo '<td>'.$med['id'].'</td>';

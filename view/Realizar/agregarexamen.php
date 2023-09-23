@@ -63,9 +63,22 @@ header('Location: ../../view/inicio/login.php');
                                     </div>
                                 </div>
                                 <div class="col-sm-5">
+                                <div class="mb-3">
+                                        <label for="txtTipoexamen" class="form-label">Fecha</label>
+                                        <input type="text" class="form-control" name="fecha" id="txtIdcliente" value="<?php date_default_timezone_set("America/El_Salvador"); echo date("d/m/Y h:i");?> " readonly>
+                                    </div>
                                     <div class="mb-3">
-                                        <label for="txtPago" class="form-label">Monto a pagar: <?php echo $_REQUEST['precio']?> </label>
-                                        <input type="text" pattern="[0-9 .]+" max="<?php echo $_REQUEST['precio']?>" class="form-control" name="pago" id="txtPago"  placeholder="Digite la cantidad a Abonar" required>
+                                        <label for="txtPago" class="form-label"><h3>Monto a pagar: <?php echo $_REQUEST['precio']?></h3> </label>
+                                        <select class="form-select" name="des" id="txtTipomuestra" required>
+                                        <option></option>
+                                        <option value="10">10%</option>
+                                        <option value="15">15%</option>
+                                        <option value="20">20%</option>
+                                        <option value="0" selected>0%</option>
+                                    </select>
+                                    
+                                    <label for="txtPago" class="form-label"><h3>Monto a pagar con descuento: <?php //$precio=$_REQUEST['precio']  $des=$_REQUEST['des']; echo $precio-($precio*$des) ?></h3> </label>   
+                                        
                                     </div>
                                 </div>
                             </div>

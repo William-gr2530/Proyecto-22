@@ -17,19 +17,20 @@ class realizarModel extends Conexion
             $this->conexion=$this->conexion->getConexion();
         }
 
-        public function insertarPrueva(string $idexamen,string $idpaciente,string $idmedico,string $pago,string $resultado)
+        public function insertarPrueva(string $idexamen,string $idpaciente,string $idmedico,string $fecha,string $des,string $resultado)
         {
            
             $this->Idexamen=$idexamen;
             $this->Idpaciente=$idpaciente;
             $this->Idmedico=$idmedico;
-            $this->Pago=$pago;
+            $this->Fecha=$fecha;
+            $this->Des=$des;
             $this->Resultado=$resultado;
          
 
-            $sql="INSERT INTO analisis(idexamen,idpaciente,idmedico,pago,resultado) VALUES(?,?,?,?,?);";
+            $sql="INSERT INTO analisis(idexamen,idpaciente,idmedico,fecha,descuento,resultado) VALUES(?,?,?,?,?,?);";
             $insert=$this->conexion->prepare($sql);
-            $arregloParametros=array($this->Idexamen,$this->Idpaciente,$this->Idmedico,$this->Pago,$this->Resultado);
+            $arregloParametros=array($this->Idexamen,$this->Idpaciente,$this->Idmedico,$this->Fecha,$this->Des,$this->Resultado);
             $ResultadoInsert=$insert->execute($arregloParametros);
             $idInsert=$this->conexion->lastInsertID();
             return $idInsert;
@@ -61,7 +62,7 @@ class realizarModel extends Conexion
 
         public function VerPruevas()
         {
-            $sql="SELECT A.id, E.nombre as examen, p.nombre as paciente,m.nombre as medico,ROUND(E.precio-A.pago,2) deuda, A.resultado  FROM analisis A inner join examen e on A.idexamen = e.id inner join paciente p on A.idpaciente = p.id inner join medico m on A.idmedico = m.id";
+            $sql="SELECT A.id, E.nombre as examen, p.nombre as paciente,m.nombre as medico,A.fecha as Fecha,A.descuento as Descuento, A.resultado  FROM analisis A inner join examen e on A.idexamen = e.id inner join paciente p on A.idpaciente = p.id inner join medico m on A.idmedico = m.id";
             $execute=$this->conexion->query($sql);
             $resultado=$execute->fetchall(PDO::FETCH_ASSOC);
             return $resultado;
@@ -69,7 +70,7 @@ class realizarModel extends Conexion
 
         public function Buscarexamen(string $buscar)
         {
-            $sql="SELECT A.id, E.nombre as examen, p.nombre as paciente,m.nombre as medico,ROUND(E.precio-A.pago,2) deuda, A.resultado  FROM analisis A inner join examen e on A.idexamen = e.id inner join paciente p on A.idpaciente = p.id inner join medico m on A.idmedico = m.id WHERE p.nombre LIKE '%$buscar%'";
+            $sql="SELECT A.id, E.nombre as examen, p.nombre as paciente,m.nombre as medico,A.fecha as Fecha,A.descuento as Descuento, A.resultado  FROM analisis A inner join examen e on A.idexamen = e.id inner join paciente p on A.idpaciente = p.id inner join medico m on A.idmedico = m.id WHERE p.nombre LIKE '%$buscar%'";
             $execute=$this->conexion->query($sql);
             $resultado=$execute->fetchall(PDO::FETCH_ASSOC);
             return $resultado;

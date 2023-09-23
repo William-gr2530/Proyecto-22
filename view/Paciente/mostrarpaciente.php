@@ -103,7 +103,7 @@ header('Location: ../../view/inicio/login.php');
                               echo '<td>'.$med['dui'].'</td>';
                               echo '<td><a href="editarpaciente.php?id='.$med['id'].'&nombre='.$med['nombre'].'&edad='.$med['edad'].'&telefono='.$med['telefono'].'&contacto='.$med['contacto'].'&direccion='.$med['direccion'].'&dui='.$med['dui'].'">Editar</a> 
                               | <a href="../../controller/pacienteController.php?Tipo=Eliminar&id='.$med['id'].'">eliminar</a>
-                              | <a href="../../view/Realizar/realizarexamen.php?idpaciente='.$med['id'].'&paciente='.$med['nombre'].'">Realizar Examen</a>
+                              | <a href="../../view/Realizar/realizarexamen.php?idpaciente='.$med['id'].'&paciente='.$med['nombre'].'&buscar=&Tipo=">Realizar Examen</a>
                               | <a href="../../view/Realizar/mostraranalisis.php?Tipo=&buscar='.$med['nombre'].'">Ver analisis</a></td>';
                               
                               echo '</td>';
@@ -112,12 +112,7 @@ header('Location: ../../view/inicio/login.php');
                           
                         </tbody>
                     </table>
-                    <tbody>
-                      <tr>
-                        <td><a href="#" data-bs-toggle="modal" data-bs-target="#modalEditarMedic">Editar
-                        </a></td>
-                      </tr>
-                    </tbody>
+                    
  
                 </div>
                 <div class="card-footer">
