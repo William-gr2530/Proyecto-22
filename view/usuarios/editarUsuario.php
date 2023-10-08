@@ -20,8 +20,32 @@
             <div class="card">
                 <div class="card-header">
                     <?php
-                    include("../templates/header.php");
-                    include("../templates/nav-bar.php");
+
+
+include("../templates/header.php");
+
+if(isset($_COOKIE["rol"])) {
+
+ 
+if ($_COOKIE["rol"]=="Administrador")
+{
+  include("../templates/nav-bar.php");
+
+}else if ($_COOKIE["rol"]=="Especialista") {
+//para un nemu aparte
+include("../templates/nav-bar3.php");
+
+}else if ($_COOKIE["rol"]=="Recepcionista")
+{
+include("../templates/nav-bar2.php"); 
+}else
+{
+header('Location: ../../view/inicio/No.php');
+}
+}else
+{
+header('Location: ../../view/inicio/login.php');
+}
                     ?>
                 </div>
                 <div class="card-body">
