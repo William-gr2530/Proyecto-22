@@ -1,3 +1,5 @@
+<h5><?php echo $_COOKIE["rol"]; echo ":__"; echo $_COOKIE["nom"];?></h5>
+        <br>
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <div class="container-fluid">
         <a class="navbar-brand" href="../inicio/home.php">

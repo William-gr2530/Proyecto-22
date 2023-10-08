@@ -1,8 +1,16 @@
+<h5><?php echo $_COOKIE["rol"]; echo ":__"; echo $_COOKIE["nom"];?></h5>
+        <br>
+    
+
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
+
         <div class="container-fluid">
+
         <a class="navbar-brand" href="../inicio/home.php">
+          
           <img src="../../img/logoLab.png" alt="Avatar Logo" style="width:50px;" class="rounded-pill"> 
         </a>
+        
           <div class="collapse navbar-collapse" id="mynavbar">
             <ul class="navbar-nav me-auto">
 
@@ -48,6 +56,9 @@
               </li>
             </ul>
             <form class="d-flex">
+            
+            
+            
             <a href="../../cookie-e.php" class="btn btn-primary ">Cerrar Sesión</a>
              
             </form>

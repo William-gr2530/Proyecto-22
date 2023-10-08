@@ -58,7 +58,7 @@ header('Location: ../../view/inicio/login.php');
                                         <select class="form-select" name="Tipoexamen" id="txtTipoexamen" required>
                                             <option></option>
                                             <option value="Fluidos corporales">Fluidos corporales</option>
-                                            <option value="Diacnostico po imagen">Diacnostico po imagen</option>
+                                            <option value="Diacnostico po imagen">Diagnostico por imagen</option>
                                             <option value="Endoscopia">Endoscopia</option>
                                             <option value="Biopsia">Biopsia</option>
                                             <option value="Material genetico">Material genetico</option>                                      

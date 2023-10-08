@@ -31,15 +31,16 @@ class UsuarioController
            
             if ($ValidarUsuario["rol"]=="Administrador")
             {
-                header("Location: ../cookie.php?Tipo=Administrador"); 
+                header('Location: ../cookie.php?Tipo=Administrador&Nom='.$ValidarUsuario["nombreUsuario"].''); 
 
            }else if ($ValidarUsuario["rol"]=="Especialista") {
             //para un nemu aparte
-            header("Location: ../cookie.php?Tipo=Especialista"); 
 
+            header('Location: ../cookie.php?Tipo=Especialista&Nom='.$ValidarUsuario["nombreUsuario"].'');
         }else if ($ValidarUsuario["rol"]=="Recepcionista")
         {
-            header("Location: ../cookie.php?Tipo=Recepcionista"); 
+            
+            header('Location: ../cookie.php?Tipo=Recepcionista&Nom='.$ValidarUsuario["nombreUsuario"].'');
         }else
         {
             header('Location: ../view/inicio/No.php');
