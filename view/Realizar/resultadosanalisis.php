@@ -65,10 +65,21 @@ header('Location: ../../view/inicio/login.php');
                             <div class="btnRegist">
                                 <button type="submit" class="btn btn-primary" name="Tipo" value="Actualizar">Registrar</button>
                             </div>
+                     
                         </form>
 
+
+                        <div class="d-flex">
+                    <a href="../inicio/home.php" class="btn btn-primary ">Cancelar</a>
+                            </div>
+
+
+
                     </div>
+                    
+
                 </div>
+
                 <div class="card-footer">
                     <?php
                     include("../templates/footer.php");

@@ -87,7 +87,7 @@ header('Location: ../../view/inicio/login.php');
                             </div>
 
                                 </div>
-                            </div>
+                            
                             <div class="btnRegist">
                                 <button type="submit" class="btn btn-primary" name="Tipo" value="Insertar">Registrar</button>
                             </div>

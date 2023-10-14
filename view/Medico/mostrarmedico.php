@@ -109,12 +109,7 @@ header('Location: ../../view/inicio/login.php');
                           
                         </tbody>
                     </table>
-                    <tbody>
-                      <tr>
-                        <td><a href="#" data-bs-toggle="modal" data-bs-target="#modalEditarMedic">Editar
-                        </a></td>
-                      </tr>
-                    </tbody>
+                    
  
                 </div>
                 <div class="card-footer">

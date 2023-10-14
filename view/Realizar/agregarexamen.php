@@ -68,8 +68,13 @@ header('Location: ../../view/inicio/login.php');
                                         <input type="text" class="form-control" name="fecha" id="txtIdcliente" value="<?php date_default_timezone_set("America/El_Salvador"); echo date("d/m/Y h:i");?> " readonly>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="txtPago" class="form-label"><h3>Monto a pagar: <?php echo $_REQUEST['precio']?></h3> </label>
-                                        <select class="form-select" name="des" id="txtTipomuestra" required>
+                                    <label for="txtPago" class="form-label"><h5>Monto a pagar:</h5> </label>
+                                        <input type="text" class="form-control"  id="txtIdprecio" value="<?php echo $_REQUEST['precio']?> " readonly>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                    <label for="txtTipoexamen" class="form-label">Seleccione el descuento</label>
+                                        <select class="form-select" name="des" id="txtTipomuestra" onclick="test()" required>
                                         <option></option>
                                         <option value="10">10%</option>
                                         <option value="15">15%</option>
@@ -77,10 +82,24 @@ header('Location: ../../view/inicio/login.php');
                                         <option value="0" selected>0%</option>
                                     </select>
                                     
-                                    <label for="txtPago" class="form-label"><h3>Monto a pagar con descuento: <?php //$precio=$_REQUEST['precio']  $des=$_REQUEST['des']; echo $precio-($precio*$des) ?></h3> </label>   
-                                        
                                     </div>
                                 </div>
+                                <h3>Monto a pagar con descuento:$ <h2 id="result"></h2></h3>                        
+        <script>
+
+function test() {
+
+var x =+ document.getElementById("txtTipomuestra").value;
+
+var y =+ document.getElementById("txtIdprecio").value;
+
+var h =y-(y*(x/100));
+var j=h.toFixed(2);
+document.getElementById("result").innerHTML = j;
+
+}
+
+</script>
                             </div>
                             <div class="btnRegist">
                                 <button type="submit" class="btn btn-primary" name="Tipo" value="Insertar">Registrar</button>
