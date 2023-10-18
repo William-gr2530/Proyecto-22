@@ -62,7 +62,7 @@ header('Location: ../../view/inicio/login.php');
                         
                       </div>      
                     </div>
-                    <table class="table table-hover my-5">
+                    <table class="table table-hover table-dark">
                           <thead class="table-primary text-center">
                             <tr>
                               <th>Id</th>
@@ -104,7 +104,7 @@ header('Location: ../../view/inicio/login.php');
                                 echo '<td scope="row">'.$usuario['estadoUsuario'].'</td>';
                                 echo '<td scope="row" hidden>'.$usuario['direccionUsuario'].'</td>';
                                 echo '<td scope="row">'.$usuario['telefonoUsuario'].'</td>';
-                                echo '<td><a href="editarUsuario.php?IdUsuario='.$usuario['IdUsuario'].'&nombreUsuario='.$usuario['nombreUsuario'].'&rol='.$usuario['rol'].'&tipoDocumento='.$usuario['tipoDocumento'].'&clave='.$usuario['clave'].'&estadoUsuario='.$usuario['estadoUsuario'].'&direccionUsuario='.$usuario['direccionUsuario'].'&telefonoUsuario='.$usuario['telefonoUsuario'].'">editar</a> | <a href="../../controller/UsuarioController.php?Tipo=Eliminar&IdUsuario='.$usuario['IdUsuario'].'" name="btnEliminar" rol="buton" >eliminar</a></td>';
+                                echo '<td><a href="editarUsuario.php?IdUsuario='.$usuario['IdUsuario'].'&nombreUsuario='.$usuario['nombreUsuario'].'&rol='.$usuario['rol'].'&tipoDocumento='.$usuario['tipoDocumento'].'&clave='.$usuario['clave'].'&estadoUsuario='.$usuario['estadoUsuario'].'&direccionUsuario='.$usuario['direccionUsuario'].'&telefonoUsuario='.$usuario['telefonoUsuario'].'" class="btn btn-success">editar</a> | <a href="../../controller/UsuarioController.php?Tipo=Eliminar&IdUsuario='.$usuario['IdUsuario'].'" name="btnEliminar" rol="buton" class="btn btn-danger">eliminar</a></td>';
                                 echo '</tr>';
                               }
                             ?>

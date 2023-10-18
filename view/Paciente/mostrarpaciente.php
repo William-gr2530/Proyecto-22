@@ -101,10 +101,11 @@ header('Location: ../../view/inicio/login.php');
                               echo '<td>'.$med['contacto'].'</td>';
                               echo '<td>'.$med['direccion'].'</td>';
                               echo '<td>'.$med['dui'].'</td>';
-                              echo '<td><a href="editarpaciente.php?id='.$med['id'].'&nombre='.$med['nombre'].'&edad='.$med['edad'].'&telefono='.$med['telefono'].'&contacto='.$med['contacto'].'&direccion='.$med['direccion'].'&dui='.$med['dui'].'">Editar</a> 
-                              | <a href="../../controller/pacienteController.php?Tipo=Eliminar&id='.$med['id'].'">eliminar</a>
-                              | <a href="../../view/Realizar/realizarexamen.php?idpaciente='.$med['id'].'&paciente='.$med['nombre'].'&buscar=&Tipo=">Realizar Examen</a>
-                              | <a href="../../view/Realizar/mostraranalisis.php?Tipo=&buscar='.$med['nombre'].'">Ver analisis</a></td>';
+                              echo '<td>
+                              <a href="../../controller/pacienteController.php?Tipo=Eliminar&id='.$med['id'].'" class="btn btn-danger">Eliminar</a>
+                              |  <a href="editarpaciente.php?id='.$med['id'].'&nombre='.$med['nombre'].'&edad='.$med['edad'].'&telefono='.$med['telefono'].'&contacto='.$med['contacto'].'&direccion='.$med['direccion'].'&dui='.$med['dui'].'" class="btn btn-primary">Editar</a> 
+                              | <a href="../../view/Realizar/realizarexamen.php?idpaciente='.$med['id'].'&paciente='.$med['nombre'].'&buscar=&Tipo=" class="btn btn-primary">Realizar</a>
+                              | <a href="../../view/Realizar/mostraranalisis.php?Tipo=&buscar='.$med['nombre'].'" class="btn btn-primary">Ver</a></td>';
                               
                               echo '</td>';
                             }

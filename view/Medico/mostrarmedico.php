@@ -59,7 +59,7 @@ header('Location: ../../view/inicio/login.php');
                         
                       </div>      
                     </div>
-                    <table class="table table-hover my-5" id="tblBuscar">
+                    <table class="table table-hover my-3" id="tblBuscar">
                         <thead class="table-primary">
                             <tr>
                               <th>Id</th>
@@ -100,8 +100,8 @@ header('Location: ../../view/inicio/login.php');
                               echo '<td>'.$med['contacto'].'</td>';
                               echo '<td>'.$med['direccion'].'</td>';
                               echo '<td>'.$med['espe'].'</td>';
-                              echo '<td><a href="editarmedico.php?id='.$med['id'].'&nombre='.$med['nombre'].'&telefono='.$med['telefono'].'&contacto='.$med['contacto'].'&direccion='.$med['direccion'].'&espe='.$med['espe'].'">Editar</a> 
-                              | <a href="../../controller/MedicoController.php?Tipo=Eliminar&id='.$med['id'].'">eliminar</a></td>';
+                              echo '<td><a href="editarmedico.php?id='.$med['id'].'&nombre='.$med['nombre'].'&telefono='.$med['telefono'].'&contacto='.$med['contacto'].'&direccion='.$med['direccion'].'&espe='.$med['espe'].'" class="btn btn-success">Editar</a> 
+                              | <a href="../../controller/MedicoController.php?Tipo=Eliminar&id='.$med['id'].'" class="btn btn-danger">eliminar</a></td>';
                               
                               echo '</td>';
                             }

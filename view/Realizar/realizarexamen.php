@@ -98,7 +98,7 @@ header('Location: ../../view/inicio/login.php');
                               echo '<td>'.$med['tipoexamen'].'</td>';
                               echo '<td>'.$med['precio'].'</td>';
                               echo '<td>'.$med['tipomuestra'].'</td>';
-                              echo '<td><a href="agregarmedico.php?paciente='.$paciente.'&idpaciente='.$idpaciente.'&idexamen='.$med['id'].'&precio='.$med['precio'].'&buscar=&Tipo=">Agregar</a> </td>';
+                              echo '<td><a href="agregarmedico.php?paciente='.$paciente.'&idpaciente='.$idpaciente.'&idexamen='.$med['id'].'&precio='.$med['precio'].'&buscar=&Tipo=" class="btn btn-primary">Agregar</a> </td>';
                               
                               echo '</td>';
                             }

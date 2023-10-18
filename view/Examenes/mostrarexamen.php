@@ -97,7 +97,7 @@ header('Location: ../../view/inicio/login.php');
                               echo '<td>'.$med['precio'].'</td>';
                               echo '<td>'.$med['tipomuestra'].'</td>';
                              
-                              echo '<td><a href="editarexamenes.php?id='.$med['id'].'&nombre='.$med['nombre'].'&tipoexamen='.$med['tipoexamen'].'&precio='.$med['precio'].'&tipomuestra='.$med['tipomuestra'].'">Editar</a> | <a href="../../controller/MedicamentoController.php?Tipo=Eliminar&id='.$med['id'].'">eliminar</a></td>';
+                              echo '<td><a href="editarexamenes.php?id='.$med['id'].'&nombre='.$med['nombre'].'&tipoexamen='.$med['tipoexamen'].'&precio='.$med['precio'].'&tipomuestra='.$med['tipomuestra'].'" class="btn btn-success">Editar</a> | <a href="../../controller/MedicamentoController.php?Tipo=Eliminar&id='.$med['id'].'" class="btn btn-danger">eliminar</a></td>';
                               echo '</td>';
                             }
                           ?>

@@ -70,7 +70,7 @@ header('Location: ../../view/inicio/login.php');
 
 
                         <div class="d-flex">
-                    <a href="../inicio/home.php" class="btn btn-primary ">Cancelar</a>
+                    <a href="../Realizar/mostraranalisis.php?buscar=&Tipo=" class="btn btn-primary ">Cancelar</a>
                             </div>
 
 

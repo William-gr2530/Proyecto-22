@@ -101,7 +101,7 @@ header('Location: ../../view/inicio/login.php');
                               echo '<td>'.$med['contacto'].'</td>';
                               echo '<td>'.$med['direccion'].'</td>';
                               echo '<td>'.$med['espe'].'</td>';
-                              echo '<td><a href="agregarexamen.php?idpaciente='.$idpaciente.'&idexamen='.$idexamen.'&precio='.$precio.'&idmedico='.$med['id'].'">Agregar</a> </td>';
+                              echo '<td><a href="agregarexamen.php?idpaciente='.$idpaciente.'&idexamen='.$idexamen.'&precio='.$precio.'&idmedico='.$med['id'].'" class="btn btn-primary">Agregar</a> </td>';
                               
                               echo '</td>';
                             }

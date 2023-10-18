@@ -84,9 +84,10 @@ header('Location: ../../view/inicio/login.php');
                                     
                                     </div>
                                 </div>
-                                <h3>Monto a pagar con descuento:$ <h2 id="result"></h2></h3>                        
+                               <h2 id="result"></h2>     
+                               <br>
+                                     
         <script>
-
 function test() {
 
 var x =+ document.getElementById("txtTipomuestra").value;
@@ -95,9 +96,13 @@ var y =+ document.getElementById("txtIdprecio").value;
 
 var h =y-(y*(x/100));
 var j=h.toFixed(2);
-document.getElementById("result").innerHTML = j;
+var resultado;
+resultado = `Monto a pagar con descuento: $${j} `;
+
+document.getElementById("result").innerHTML = resultado;
 
 }
+
 
 </script>
                             </div>
