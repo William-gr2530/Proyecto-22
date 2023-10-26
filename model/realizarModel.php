@@ -62,7 +62,7 @@ class realizarModel extends Conexion
 
         public function VerPruevas()
         {
-            $sql="SELECT A.id, E.nombre as examen, p.nombre as paciente,m.nombre as medico,A.fecha as Fecha,A.descuento as Descuento, A.resultado  FROM analisis A inner join examen e on A.idexamen = e.id inner join paciente p on A.idpaciente = p.id inner join medico m on A.idmedico = m.id";
+            $sql="SELECT A.id, E.nombre as examen, p.nombre as paciente, p.telefono,m.nombre as medico,A.fecha as Fecha,A.descuento as Descuento, A.resultado  FROM analisis A inner join examen e on A.idexamen = e.id inner join paciente p on A.idpaciente = p.id inner join medico m on A.idmedico = m.id";
             $execute=$this->conexion->query($sql);
             $resultado=$execute->fetchall(PDO::FETCH_ASSOC);
             return $resultado;
@@ -70,7 +70,24 @@ class realizarModel extends Conexion
 
         public function Buscarexamen(string $buscar)
         {
-            $sql="SELECT A.id, E.nombre as examen, p.nombre as paciente,m.nombre as medico,A.fecha as Fecha,A.descuento as Descuento, A.resultado  FROM analisis A inner join examen e on A.idexamen = e.id inner join paciente p on A.idpaciente = p.id inner join medico m on A.idmedico = m.id WHERE p.nombre LIKE '%$buscar%'";
+            $sql="SELECT A.id, E.nombre as examen, p.nombre as paciente, p.telefono,m.nombre as medico,A.fecha as Fecha,A.descuento as Descuento, A.resultado  FROM analisis A inner join examen e on A.idexamen = e.id inner join paciente p on A.idpaciente = p.id inner join medico m on A.idmedico = m.id WHERE p.nombre LIKE '%$buscar%'";
+            $execute=$this->conexion->query($sql);
+            $resultado=$execute->fetchall(PDO::FETCH_ASSOC);
+            return $resultado;
+        }
+
+        /************ */
+        public function EnviarResultado(string $Enviar)
+        {
+            $sql="SELECT telefono FROM paciente WHERE nombre LIKE '%$Enviar%'";
+            $execute=$this->conexion->query($sql);
+            $resultado=$execute->fetchall(PDO::FETCH_ASSOC);
+            return $resultado;
+        }
+//recuperar contacto medico segun el analisis
+        public function EnviarMedico(string $id, string $Medico)
+        {
+            $sql="SELECT m.contacto, A.id, p.nombre  FROM analisis A inner join medico m on A.idmedico = m.id inner join paciente p on A.idpaciente = p.id WHERE m.nombre  LIKE '%$Medico%' AND A.id=$id";
             $execute=$this->conexion->query($sql);
             $resultado=$execute->fetchall(PDO::FETCH_ASSOC);
             return $resultado;

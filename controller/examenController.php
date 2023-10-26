@@ -70,7 +70,11 @@ class examenController
         require_once("../../view/Realizar/mostraranalisis.php");
     }
 
-
+    public function EnviarResultado(string $buscar)
+    {
+        $Lista=$this->ObjrealizarModel->EnviarResultado();
+        require_once("../../view/Realizar/mostraranalisis.php");
+    }
 
 
 

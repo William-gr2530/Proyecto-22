@@ -76,7 +76,7 @@ class PDF extends FPDF
       $this->Cell(50); // mover a la derecha
       $this->SetFont('Arial', 'B', 15);
       
-         $this->Cell(100, 10, utf8_decode("usuario"), 0, 1, 'C', 0);
+         $this->Cell(100, 10, utf8_decode($_REQUEST['buscar']), 0, 1, 'C', 0);
        
        $this->Ln(7);
       } else {
@@ -140,5 +140,7 @@ foreach($Lista as $usuario){
    $pdf->Cell(85, 10, utf8_decode($usuario['resultado']), 1, 0, 'C', 0);
    $pdf->Cell(35, 10, utf8_decode($usuario['Fecha']), 1, 1, 'C', 0);
  }
+date_default_timezone_set("America/El_Salvador");
+$fecha=date("d/m/Y h:i");
 
-$pdf->Output('Reseltados.pdf', 'I');//nombreDescarga, Visor(I->visualizar - D->descargar)
+$pdf->Output('Reseltados'.$fecha.'.pdf', 'I');//nombreDescarga, Visor(I->visualizar - D->descargar)

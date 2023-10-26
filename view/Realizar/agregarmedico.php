@@ -58,7 +58,8 @@ header('Location: ../../view/inicio/login.php');
                         
                       </div>      
                     </div>
-                    <table class="table table-hover my-5" id="tblBuscar">
+                    <br>
+                    <table class="table table-hover table-dark" id="tblBuscar">
                         <thead class="table-primary">
                             <tr>
                               <th>Id</th>

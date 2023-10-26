@@ -115,4 +115,5 @@ $pdf->Cell(85, 10, utf8_decode($_REQUEST['resultado']), 1, 0, 'C', 0);
 $pdf->Cell(35, 10, utf8_decode($_REQUEST['fecha']), 1, 1, 'C', 0);
 
 
-$pdf->Output('Reseltados.pdf', 'I');//nombreDescarga, Visor(I->visualizar - D->descargar)
+$pdf->Output('F','pdf/'.$_REQUEST['id'].'.pdf');//nombreDescarga, Visor(I->visualizar - D->descargar)
+$pdf->Output('I','pdf/'.$_REQUEST['id'].'.pdf');

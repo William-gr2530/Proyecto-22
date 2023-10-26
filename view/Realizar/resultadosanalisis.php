@@ -63,22 +63,40 @@ header('Location: ../../view/inicio/login.php');
 
                             
                             <div class="btnRegist">
-                                <button type="submit" class="btn btn-primary" name="Tipo" value="Actualizar">Registrar</button>
+                                <button type="submit" class="btn btn-primary" name="Tipo" value="Actualizar" >Registrar</button>
                             </div>
                      
                         </form>
 
-
-                        <div class="d-flex">
+                        <form class="d-flex">
                     <a href="../Realizar/mostraranalisis.php?buscar=&Tipo=" class="btn btn-primary ">Cancelar</a>
+                  </form>
+
                             </div>
-
-
-
-                    </div>
                     
 
-                </div>
+                    </div>
+
+ <!-- href="../whapp/whap.php" target="_blank"--->
+ <!-- Envio del notificasion de los examenes --->
+ <?php
+                                    include("../../model/realizarModel.php");
+                                    $user = new realizarModel();
+                                  
+                              $Enviar="";
+                              $Enviar=$_REQUEST['nombre'];
+                              if ($Enviar!=""){ 
+                              $Lista = $user->EnviarResultado($Enviar);
+                              foreach($Lista as $usuario){
+                                echo '<a href="../whapp/whap.php?telefono='.$usuario['telefono'].'" target="_blank" class="btn btn-warning">Notificar resultados</a>';
+
+                               }
+                            }
+                            
+                    ?>
+
+
+
 
                 <div class="card-footer">
                     <?php
